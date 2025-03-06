@@ -1,4 +1,6 @@
 import SwiftUI
+import Apollo
+import RocketReserverAPI
 
 class LaunchListViewModel: ObservableObject {
     
@@ -7,6 +9,14 @@ class LaunchListViewModel: ObservableObject {
     
     init() {
         // TODO (Part II - Write your first subscription)
+        Network.shared.apollo.fetch(query: LaunchListQuery()) { result in
+            switch result {
+            case .success(let graphQLResult):
+                print("Success! Result: \(graphQLResult)")
+            case .failure(let error):
+                print("Failure! Error: \(error)")
+            }
+        }
     }
     
     // MARK: - Subscriptions
