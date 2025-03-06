@@ -8,18 +8,19 @@ struct LaunchListView: View {
         NavigationStack {
             List {
                 ForEach(0..<10) { index in
-                    LaunchRow()
+                    ForEach(0..<viewModel.launches.count, id: \.self) { index in
+                        LaunchRow(launch: viewModel.launches[index])
+                    }
                 }
             }
             .task {
-                // TODO (Part I - Connect your queries to your UI)
+                viewModel.loadMoreLaunches()
             }
             .navigationTitle("Rocket Launches")
             .appAlert($viewModel.appAlert)
         }
         .notificationView(message: $viewModel.notificationMessage)
     }
-    
 }
 
 struct LaunchListView_Previews: PreviewProvider {
