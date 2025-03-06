@@ -1,16 +1,36 @@
 import SwiftUI
+import RocketReserverAPI
 
 class DetailViewModel: ObservableObject {
+    let launchID: RocketReserverAPI.ID
     
+    @Published var launch: LaunchDetailsQuery.Data.Launch?
     @Published var isShowingLogin = false
     @Published var appAlert: AppAlert?
     
-    init() {
-        // TODO (Part II - Complete the details view)
+    init(launchID: RocketReserverAPI.ID) {
+        self.launchID = launchID
     }
     
     func loadLaunchDetails() {
-        // TODO (Part II - Complete the details view)
+        guard launchID != launch?.id else {
+            return
+        }
+        
+        Network.shared.apollo.fetch(query: LaunchDetailsQuery(launchId: launchID)) { [weak self] result in
+            switch result {
+            case .success(let graphQLResult):
+                if let launch = graphQLResult.data?.launch {
+                    self?.launch = launch
+                }
+                
+                if let errors = graphQLResult.errors {
+                    self?.appAlert = .errors(errors: errors)
+                }
+            case .failure(let error):
+                self?.appAlert = .errors(errors: [error])
+            }
+        }
     }
     
     func bookOrCancel() {

@@ -9,7 +9,9 @@ struct LaunchListView: View {
             List {
                 ForEach(0..<10) { index in
                     ForEach(0..<viewModel.launches.count, id: \.self) { index in
-                        LaunchRow(launch: viewModel.launches[index])
+                        NavigationLink(destination: DetailView(launchID: viewModel.launches[index].id)){
+                            LaunchRow(launch: viewModel.launches[index])
+                        }
                     }
                 }
             }
