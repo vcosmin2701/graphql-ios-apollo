@@ -1,5 +1,6 @@
 import SwiftUI
 import RocketReserverAPI
+import KeychainSwift
 
 class DetailViewModel: ObservableObject {
     let launchID: RocketReserverAPI.ID
@@ -45,6 +46,7 @@ class DetailViewModel: ObservableObject {
     private func bookTrip() {
         print("Book Trip!")
         // TODO (Part II - Define additional mutations)
+    
     }
     
     private func cancelTrip() {
@@ -53,8 +55,7 @@ class DetailViewModel: ObservableObject {
     }
     
     private func isLoggedIn() -> Bool {
-        // TODO (Part II - Write your first mutation)
-        return false
+        let keychain = KeychainSwift()
+        return keychain.get(LoginView.loginKeychainKey) != nil
     }
-    
 }
