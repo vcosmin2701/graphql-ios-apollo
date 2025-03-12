@@ -56,7 +56,7 @@ class DetailViewModel: ObservableObject {
             guard let self = self else {
                 return
             }
-
+            
             switch result {
             case .success(let graphQLResult):
                 if let bookingResult = graphQLResult.data?.bookTrips {
@@ -69,7 +69,7 @@ class DetailViewModel: ObservableObject {
                                                message: bookingResult.message ?? "Unknown failure")
                     }
                 }
-
+                
                 if let errors = graphQLResult.errors {
                     self.appAlert = .errors(errors: errors)
                 }
@@ -84,7 +84,7 @@ class DetailViewModel: ObservableObject {
             guard let self = self else {
                 return
             }
-
+            
             switch result {
             case .success(let graphQLResult):
                 if let cancelResult = graphQLResult.data?.cancelTrip {
@@ -97,7 +97,7 @@ class DetailViewModel: ObservableObject {
                                                message: cancelResult.message ?? "Unknown failure.")
                     }
                 }
-
+                
                 if let errors = graphQLResult.errors {
                     self.appAlert = .errors(errors: errors)
                 }
