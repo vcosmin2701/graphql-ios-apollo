@@ -28,6 +28,11 @@
 		84636D1B2D79C48D007AE376 /* RocketReserverAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 84636D1A2D79C48D007AE376 /* RocketReserverAPI */; };
 		84636D1D2D79C785007AE376 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84636D1C2D79C785007AE376 /* Network.swift */; };
 		84636D222D79D262007AE376 /* LaunchDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84636D212D79D262007AE376 /* LaunchDetails.graphql */; };
+		84977E962D8174210071E514 /* Login.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84977E952D8174210071E514 /* Login.graphql */; };
+		849A5F8C2D7B29A600BF0DCC /* AuthorizationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A5F8B2D7B29A600BF0DCC /* AuthorizationInterceptor.swift */; };
+		849A5F8E2D7B2B1E00BF0DCC /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A5F8D2D7B2B1E00BF0DCC /* NetworkInterceptorProvider.swift */; };
+		849A5F902D7B338B00BF0DCC /* BookTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 849A5F8F2D7B338B00BF0DCC /* BookTrip.graphql */; };
+		849A5F922D7B35CC00BF0DCC /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 849A5F912D7B35CC00BF0DCC /* CancelTrip.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		84636D172D79C288007AE376 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
 		84636D1C2D79C785007AE376 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		84636D212D79D262007AE376 /* LaunchDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchDetails.graphql; sourceTree = "<group>"; };
+		84977E952D8174210071E514 /* Login.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Login.graphql; sourceTree = "<group>"; };
+		849A5F8B2D7B29A600BF0DCC /* AuthorizationInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInterceptor.swift; sourceTree = "<group>"; };
+		849A5F8D2D7B2B1E00BF0DCC /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
+		849A5F8F2D7B338B00BF0DCC /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
+		849A5F912D7B35CC00BF0DCC /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,9 @@
 				66EEA77F2A13C9AD00BB8C72 /* schema.graphqls */,
 				84636D172D79C288007AE376 /* LaunchList.graphql */,
 				84636D212D79D262007AE376 /* LaunchDetails.graphql */,
+				849A5F8F2D7B338B00BF0DCC /* BookTrip.graphql */,
+				849A5F912D7B35CC00BF0DCC /* CancelTrip.graphql */,
+				84977E952D8174210071E514 /* Login.graphql */,
 			);
 			path = graphql;
 			sourceTree = "<group>";
@@ -110,6 +123,8 @@
 				66F96F9E29FAC0D700713B80 /* Assets.xcassets */,
 				66F96FA029FAC0D700713B80 /* Preview Content */,
 				84636D1C2D79C785007AE376 /* Network.swift */,
+				849A5F8B2D7B29A600BF0DCC /* AuthorizationInterceptor.swift */,
+				849A5F8D2D7B2B1E00BF0DCC /* NetworkInterceptorProvider.swift */,
 			);
 			path = RocketReserver;
 			sourceTree = "<group>";
@@ -201,6 +216,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				66F96FA229FAC0D700713B80 /* Preview Assets.xcassets in Resources */,
+				849A5F922D7B35CC00BF0DCC /* CancelTrip.graphql in Resources */,
+				849A5F902D7B338B00BF0DCC /* BookTrip.graphql in Resources */,
+				84977E962D8174210071E514 /* Login.graphql in Resources */,
 				66EEA7802A13C9AD00BB8C72 /* schema.graphqls in Resources */,
 				84636D182D79C288007AE376 /* LaunchList.graphql in Resources */,
 				84636D222D79D262007AE376 /* LaunchDetails.graphql in Resources */,
@@ -220,8 +238,10 @@
 				66F96FEA29FC183200713B80 /* NotificationView.swift in Sources */,
 				66F96FC729FACE1A00713B80 /* DetailView.swift in Sources */,
 				66F96FDC29FAE88E00713B80 /* LaunchListViewModel.swift in Sources */,
+				849A5F8C2D7B29A600BF0DCC /* AuthorizationInterceptor.swift in Sources */,
 				84636D1D2D79C785007AE376 /* Network.swift in Sources */,
 				66F96FE829FC0D7700713B80 /* View+Alert.swift in Sources */,
+				849A5F8E2D7B2B1E00BF0DCC /* NetworkInterceptorProvider.swift in Sources */,
 				66F96FC529FAC7F200713B80 /* LaunchRow.swift in Sources */,
 				66F96FE029FAFB9600713B80 /* LoginView.swift in Sources */,
 				66F96F9B29FAC0D600713B80 /* RocketReserverApp.swift in Sources */,
