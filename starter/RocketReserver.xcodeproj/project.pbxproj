@@ -33,6 +33,7 @@
 		849A5F8E2D7B2B1E00BF0DCC /* NetworkInterceptorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A5F8D2D7B2B1E00BF0DCC /* NetworkInterceptorProvider.swift */; };
 		849A5F902D7B338B00BF0DCC /* BookTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 849A5F8F2D7B338B00BF0DCC /* BookTrip.graphql */; };
 		849A5F922D7B35CC00BF0DCC /* CancelTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 849A5F912D7B35CC00BF0DCC /* CancelTrip.graphql */; };
+		84E188CB2D8180F8002DF6AE /* TripsBooked.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84E188CA2D8180F8002DF6AE /* TripsBooked.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		849A5F8D2D7B2B1E00BF0DCC /* NetworkInterceptorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterceptorProvider.swift; sourceTree = "<group>"; };
 		849A5F8F2D7B338B00BF0DCC /* BookTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BookTrip.graphql; sourceTree = "<group>"; };
 		849A5F912D7B35CC00BF0DCC /* CancelTrip.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CancelTrip.graphql; sourceTree = "<group>"; };
+		84E188CA2D8180F8002DF6AE /* TripsBooked.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TripsBooked.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				849A5F8F2D7B338B00BF0DCC /* BookTrip.graphql */,
 				849A5F912D7B35CC00BF0DCC /* CancelTrip.graphql */,
 				84977E952D8174210071E514 /* Login.graphql */,
+				84E188CA2D8180F8002DF6AE /* TripsBooked.graphql */,
 			);
 			path = graphql;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				849A5F922D7B35CC00BF0DCC /* CancelTrip.graphql in Resources */,
 				849A5F902D7B338B00BF0DCC /* BookTrip.graphql in Resources */,
 				84977E962D8174210071E514 /* Login.graphql in Resources */,
+				84E188CB2D8180F8002DF6AE /* TripsBooked.graphql in Resources */,
 				66EEA7802A13C9AD00BB8C72 /* schema.graphqls in Resources */,
 				84636D182D79C288007AE376 /* LaunchList.graphql in Resources */,
 				84636D222D79D262007AE376 /* LaunchDetails.graphql in Resources */,
