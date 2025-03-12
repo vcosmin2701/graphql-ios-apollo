@@ -14,9 +14,18 @@ struct LaunchListView: View {
                         }
                     }
                 }
+                if viewModel.lastConnection?.hasMore != false {
+                    if viewModel.activeRequest == nil {
+                        Button(action: viewModel.loadMoreLaunchesIfTheyExist) {
+                            Text("Tap to load more")
+                        }
+                    } else {
+                        Text("Loading...")
+                    }
+                }
             }
             .task {
-                viewModel.loadMoreLaunches()
+                viewModel.loadMoreLaunchesIfTheyExist()
             }
             .navigationTitle("Rocket Launches")
             .appAlert($viewModel.appAlert)

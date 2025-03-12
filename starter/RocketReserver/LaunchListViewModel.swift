@@ -5,6 +5,8 @@ import RocketReserverAPI
 class LaunchListViewModel: ObservableObject {
     
     @Published var launches = [LaunchListQuery.Data.Launches.Launch]()
+    @Published var lastConnection: LaunchListQuery.Data.Launches?
+    @Published var activeRequest: Cancellable?
     @Published var appAlert: AppAlert?
     @Published var notificationMessage: String?
     
@@ -37,18 +39,30 @@ class LaunchListViewModel: ObservableObject {
     // MARK: - Launch Loading
     
     func loadMoreLaunchesIfTheyExist() {
-        // TODO (Part II - Paginate results)
+        guard let connection = self.lastConnection else {
+            self.loadMoreLaunches(from: nil)
+            return
+        }
+        
+        guard connection.hasMore else {
+            return
+        }
+        
+        self.loadMoreLaunches(from: connection.cursor)
     }
     
-    func loadMoreLaunches() {
-        Network.shared.apollo.fetch(query: LaunchListQuery()) { [weak self] result in
+    func loadMoreLaunches(from cursor: String?) {
+        self.activeRequest = Network.shared.apollo.fetch(query: LaunchListQuery(cursor: cursor ?? .null)) { [weak self] result in
             guard let self = self else {
                 return
             }
             
+            self.activeRequest = nil
+            
             switch result {
             case .success(let graphQLResult):
                 if let launchConnection = graphQLResult.data?.launches {
+                    self.lastConnection = launchConnection
                     self.launches.append(contentsOf: launchConnection.launches.compactMap({ $0 }))
                 }
                 
